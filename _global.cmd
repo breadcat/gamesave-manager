@@ -19,10 +19,12 @@ exit
 :existing
 echo a directory for %gamename% already exists.
 echo press any to recreate symlink.
+if exist *.tmp del *.tmp
 pause > nul && goto begin
 
 :nosavedir
 echo %gamesavedir% doesn't exist, press any key to exit.
+if exist *.tmp del *.tmp
 pause > nul && exit
 
 :begin
