@@ -1,3 +1,3 @@
 set gamename=%~n0
-set gamesavedir=%userprofile%\Documents\Square Enix\%gamename%\Saves
+set gamesavedir=%userprofile%\documents\square enix\%gamename%\saves
 call _global.cmd
