@@ -1,3 +1,5 @@
 set gamename=%~n0
-set gamesavedir=%userprofile%\documents\my games\%gamename%
+dir /b "%programfiles(x86)%\steam\userdata" > "%gamename%.tmp"
+set /p userid=<"%gamename%.tmp"
+set gamesavedir=%programfiles(x86)%\steam\userdata\%userid%\210770
 call _global.cmd
