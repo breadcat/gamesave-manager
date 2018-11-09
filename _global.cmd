@@ -39,7 +39,18 @@ cls && echo moved savegames and set up symlink, press any key to exit.
 pause > nul && exit
 
 :error
-echo missing either %%gamename%% or %%gamesavedir%% variables, press any key to exit.
+echo Missing either %%gamename%% or %%gamesavedir%% variables.
+if not exist "%programfiles%\7-zip\7z.exe" goto justexit
+echo.
+echo Would you like to use 7zip to create a backup of your saves directory?
+echo Press any key to create this archive.
+pause > nul
+if not exist backups mkdir backups
+for /f "skip=1 delims=" %%x in ('wmic os get localdatetime') do if not defined X set X=%%x
+set dy=%X:~0,4%&&set dm=%X:~4,2%&&set dd=%X:~6,2%&&set dh=%X:~8,2%&&set dn=%X:~10,2%
+"%programfiles%\7-zip\7z.exe" a -mx9 "backups\saves %dy%-%dm%-%dd%_%dh%%dn%.7z" "saves\"
+echo backup created, press any key to exit
+:justquit
 pause > nul && exit
 
 :eof
