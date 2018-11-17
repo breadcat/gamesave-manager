@@ -1,0 +1,5 @@
+
+retroarch:
+robocopy /E "%appdata%\retroarch\system" "."
+rd /s /q "%appdata%\retroarch\system"
+cmd /C mklink /J "%appdata%\retroarch\system" "."
