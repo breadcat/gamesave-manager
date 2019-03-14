@@ -1,8 +1,12 @@
 
-_unsorted/
-
+# backups created by _global
 backups/
 
+# emulator firmware
 firmware/
 
+# actual save files
 saves/
+
+# additional tools directory
+tools/
